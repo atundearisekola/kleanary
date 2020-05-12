@@ -1,0 +1,48 @@
+import React,{Component} from 'react';
+import {Platform, StyleSheet, Text, View } from 'react-native';
+//import {createAppContainer,createSwitchNavigator} from 'react-navigation';
+//import {createStackNavigator} from 'react-navigation-stack';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import Splash from './src/components/Splash';
+import {Main} from './src/components/Main';
+import {AuthRoute} from './src/components/AuthRoute';
+
+
+const AppStack = createStackNavigator({ MainScreen:{
+  screen: Main,
+  navigationOptions:{
+    headerShown: false,
+}
+} });
+const AuthStack = createStackNavigator({ AuthScreen:{
+  screen: AuthRoute,
+  navigationOptions:{
+    headerShown: false,
+}
+} });
+
+
+
+
+
+ class  App extends Component {
+  render(){
+    return (
+      <AppContainer/>
+    );
+  }
+  
+}
+export default App;
+const AppContainer = createAppContainer(createSwitchNavigator(
+  {
+      Starter: Splash, 
+      App: AppStack, 
+      Auth: AuthStack
+  }, 
+  {
+      initialRouteName: 'Starter'
+  }
+));
+
