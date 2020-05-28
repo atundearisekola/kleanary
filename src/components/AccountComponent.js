@@ -288,10 +288,7 @@ marginTop: 35
 onValueChange={this.handleChange('country')}
 >
  <Picker.Item label="Nigeria" value="key0" />
- <Picker.Item label="ATM Card" value="key1" />
- <Picker.Item label="Debit Card" value="key2" />
- <Picker.Item label="Credit Card" value="key3" />
- <Picker.Item label="Net Banking" value="key4" />
+ 
 </Picker>
 
 
@@ -308,9 +305,7 @@ onValueChange={this.handleChange('country')}
 >
  <Picker.Item label="Lagos" value="key0" />
  <Picker.Item label="Ogun" value="key1" />
- <Picker.Item label="Debit Card" value="key2" />
- <Picker.Item label="Credit Card" value="key3" />
- <Picker.Item label="Net Banking" value="key4" />
+ 
 </Picker>
 
 <Picker
@@ -324,10 +319,7 @@ onValueChange={this.handleChange('country')}
  onValueChange={this.handleChange('localgov')}
 >
  <Picker.Item label="Ifelodun" value="key0" />
- <Picker.Item label="ATM Card" value="key1" />
- <Picker.Item label="Debit Card" value="key2" />
- <Picker.Item label="Credit Card" value="key3" />
- <Picker.Item label="Net Banking" value="key4" />
+ 
 </Picker>
 
 </Form>

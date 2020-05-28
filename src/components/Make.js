@@ -3,7 +3,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Entypo from 'react-native-vector-icons/Entypo'
-//import MediaPicker from 'react-native-mediapicker'
+import DateTimePicker from '@react-native-community/datetimepicker';
 import { StyleSheet,Image,TouchableWithoutFeedback,
     StatusBar,TextInput,SafeAreaView,
     Keyboard,TouchableOpacity,KeyboardAvoidingView,ScrollView, Dimensions,
@@ -219,6 +219,52 @@ const Make =(props)=>{
                    </TouchableOpacity>
     
                       </View>
+
+                      <Text style={styles.text_footer}>Select pickup and delivery date</Text>
+                      <View style={styles.date_pickers}>
+                      
+                       <View>
+
+                       <TouchableOpacity
+                  onPress={()=>{
+                    props.showDateTimeMode('date')
+                  }}
+                   style={[styles.singIn,{
+                     borderColor: '#4dc2f8',
+                     borderWidth: 1,
+                     marginLeft: 5,
+                     padding:15
+                   }]}
+                   >
+                     <Text style={[styles.textSign,{
+                   color: '#4dc2f8'
+                 }]}>Select Pickup Date</Text>
+                   </TouchableOpacity>
+                        
+                        
+                      </View>
+                      <View>
+                      <TouchableOpacity
+                  onPress={()=>{
+                    props.showDateTimeMode('date')
+                  }}
+                   style={[styles.singIn,{
+                     borderColor: '#4dc2f8',
+                     borderWidth: 1,
+                     marginLeft: 5,
+                     padding:15
+                   }]}
+                   >
+                     <Text style={[styles.textSign,{
+                   color: '#4dc2f8'
+                 }]}>Select Delivery Date</Text>
+                   </TouchableOpacity>
+                      </View>
+                      </View>
+
+                     
+
+
                       <Text style={styles.text_footer}>Select pickup and delivery date</Text>
                       <View style={styles.date_pickers}>
                        <View style={styles.border}>

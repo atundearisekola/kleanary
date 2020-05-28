@@ -1,5 +1,5 @@
 //import jwt from 'jsonwebtoken';
-import {Platform, StyleSheet, Text, View ,AsyncStorage} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage'
 const jwt_token = 'v4FGLJiAZCPaZsD9Lxh32DaHHBwXkCFRHX838skf';
 
 export const loadState = () => {

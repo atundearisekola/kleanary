@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Image,Dimensions,StyleSheet,StatusBar } from 'react-native';
-import { Container, Header, View, DeckSwiper, Card, CardItem, DatePicker,
+import { Container, Header, View, DeckSwiper, Card, CardItem,
      Thumbnail, Text, Left, Body,Fab, Form,Picker,Item,Label,Input, Icon, H1, H3, Button, ActionSheet, Root, Col, Row } from 'native-base';
      import * as Animatable from 'react-native-animatable';
      import LinearGradient from 'react-native-linear-gradient';
      import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+     //import DatePicker from '@react-native-community/datetimepicker'
+     import DateTimePicker from '@react-native-community/datetimepicker';
    import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
    import Make from './Make';
    import Confirm  from './Confirm';
@@ -31,6 +33,8 @@ class RequestLaundry extends Component {
           numberformat: '0',
           pickupDate: new Date('2019-08-18T21:11:54'),
           deliveryDate: new Date('2019-08-18T21:11:54'),
+          show:false,
+          mode:"date",
           name:"",
           qty: '1',
           klist:[],
@@ -66,6 +70,12 @@ class RequestLaundry extends Component {
         this.setDate = this.setDate.bind(this);
         
       }
+       showDateTimeMode = currentMode => {
+        
+        this.setState({...this.state, show:true, mode: currentMode})
+      };
+    
+      
        getSteps =() =>{
         return ['REQUEST LAUNDRY', 'PICKUP & DELIVERY DETAILS', ' CONFIRM REQUEST ','COMPLETE REQUEST'];
       }
@@ -164,7 +174,7 @@ class RequestLaundry extends Component {
         
         })
         this.setState({...this.state, todoIron:list});
-         document.getElementById(filename).style.borderColor="grey";
+        // document.getElementById(filename).style.borderColor="grey";
               }else{
                const data={todo:todo,filename:filename,url:url};
                  let todoIron = [...this.state.todoIron, data];
@@ -262,7 +272,7 @@ class RequestLaundry extends Component {
 
 
       renderItem = ({item,index}) => {
-        var color = "red";
+        var color = "grey";
         switch (this.state.todo) {
           case "iron":
               
@@ -504,6 +514,7 @@ class RequestLaundry extends Component {
         <View style={styles.footer}>
         {this.state.page ==0? <Make handleDDateChange={this.handleDDateChange} 
         handlePDateChange={this.handlePDateChange} 
+        showDateTimeMode={this.showDateTimeMode}
         delLaundry={this.delLaundry} 
         state={this.state} 
         onClickAddImage={this.onClickAddImage}
@@ -534,6 +545,17 @@ class RequestLaundry extends Component {
     </View>
 
     <ImageModal ref={'imageModal'} parentInit={this} />
+    {this.state.show && (
+        <DateTimePicker
+          testID="dateTimePicker"
+          timeZoneOffsetInMinutes={0}
+          value={this.state.pickupDate}
+          mode={this.state.mode}
+          is24Hour={true}
+          display="default"
+          onChange={this.handlePDateChange}
+        />
+      )}
 
       </Root>
       

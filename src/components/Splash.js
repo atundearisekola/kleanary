@@ -2,7 +2,8 @@ import React ,{Component}from 'react';
 import { StyleSheet, Text, View ,Image,TouchableWithoutFeedback,
   StatusBar,TextInput,SafeAreaView,
   Keyboard,TouchableOpacity,KeyboardAvoidingView,ScrollView, Dimensions,
-  ActivityIndicator,AsyncStorage} from 'react-native';
+  ActivityIndicator} from 'react-native';
+  import AsyncStorage from '@react-native-community/async-storage'
   import { Icon } from 'native-base';
   import * as Animatable from 'react-native-animatable';
   import LinearGradient from 'react-native-linear-gradient';

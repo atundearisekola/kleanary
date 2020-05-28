@@ -102,9 +102,7 @@ import {setFav} from '../actions/AuthAction';
                                onValueChange={this.handleChange('starch')} > 
                                <Picker.Item label="EasyOn" value="key0" /> 
                                <Picker.Item label="GDB" value="key1" /> 
-                               <Picker.Item label="Debit Card" value="key2" /> 
-                               <Picker.Item label="Credit Card" value="key3" /> 
-                               <Picker.Item label="Net Banking" value="key4" /> 
+                              
                                </Picker> 
 
                                </View>
@@ -127,8 +125,7 @@ import {setFav} from '../actions/AuthAction';
                                <Picker.Item label="Explorer" value="key0" /> 
                                <Picker.Item label="412" value="key1" /> 
                                <Picker.Item label="Love" value="key2" /> 
-                               <Picker.Item label="Credit Card" value="key3" /> 
-                               <Picker.Item label="Net Banking" value="key4" /> 
+                               
                                </Picker> 
 
                                </View>
